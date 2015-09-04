@@ -1,0 +1,319 @@
+#regform h1{
+color:#234d95;
+font-size: 26px;
+margin-top: 10px;
+text-shadow: none;
+margin-bottom: 20px;
+text-align: center;
+float: none;	
+}
+#regform.register{
+width: 800px;
+margin: 20px auto 0px auto;
+height: 950px;
+background-color: #fff;
+padding: 5px;
+display:block;
+	
+}
+form p{
+    font-size: 16px;
+    clear:both;
+    margin: 0;
+    color:gray;
+    padding:4px;
+}
+form.register fieldset.row1
+{
+    width:770px;
+    padding:5px;
+    float:right;
+   /* border-top:1px solid #F5F5F5;*/
+    margin-bottom:15px;
+}
+#regform.register fieldset.row1 label{
+  width: 160px;
+float: right;
+text-align: right;
+margin-right: 10px;
+margin-top: 2px;
+font-weight: bold;
+
+}
+#regform.register fieldset.row2
+{
+   width:770px;
+    
+    padding:5px;
+    float:right;
+}
+#regform.register fieldset.row3
+{
+     width:770px;
+    
+    padding:5px;
+    float:right;
+}
+#regform.register fieldset.row3 label{
+  width: 160px;
+float: right;
+text-align: right;
+margin-right: 10px;
+margin-top: 2px;
+font-weight: bold;
+
+}
+#regform.register fieldset.row3 input{
+width: 100px;
+color: #505050;
+float: right;
+margin-right: 5px;
+border: 1px solid #B4B4B4;
+}
+
+#regform.register fieldset.row4
+{
+     width:770px;
+    padding:5px;
+    float:right;;
+}
+#regform.register fieldset.row4 label{
+width: 400px;
+float: right;
+text-align: right;
+margin-right: 10px;
+margin-top: 2px;
+font-weight: normal;
+font-size: 16px;
+
+}
+#regform.register .infobox{
+float: right;
+color: #1F62AA;
+margin: 0 auto;
+margin: 20px;
+border: 1px solid #1F62AA;
+padding: 5px;
+width: 400px;
+/* height: 98px; */
+font-size: 18px;
+background: #FFFFFF url(../img/bg_infobox.gif) repeat-x top left;
+}
+#regform.register legend
+{
+    color: #234d95;
+padding: 8px;
+/* margin-left: 18px; */
+font-weight: bold;
+font-size: 18px;
+font-weight: bold;
+}
+#regform.register label{
+  width: 160px;
+float: right;
+text-align: right;
+margin-right: 10px;
+margin-top: 2px;
+font-weight: bold;
+}
+#regform.register label.optional{
+color: #5BA751;
+}
+#regform.register label.obinfo{
+	font-size:14px;
+float: right;
+padding: 3px;
+font-style: italic;
+color: red;
+}
+#regform.register input{
+width: 150px;
+color: #505050;
+float: right;
+margin-right: 5px;;
+}
+form.register input.long{
+    width: 247px;
+    color: #505050;
+}
+form.register input.short{
+    width: 40px;
+    color: #505050;
+}
+form.register input[type=radio]
+{
+    float:left;
+    width:15px;
+}
+#regform.register label.gender{
+    margin-top:-1px;
+    margin-bottom:2px;
+    width:34px;
+    float:right;
+    text-align:right;
+    line-height:19px;
+}
+form.register input[type=text]
+{
+    border: 1px solid #E1E1E1;
+    height: 18px;
+}
+form.register input[type=password]
+{
+    border: 1px solid #E1E1E1;
+    height: 18px;
+}
+.button
+{
+    background: #abda0f url(../img/overlay.png) repeat-x;
+    padding: 8px 10px 8px;
+    color: #fff;
+    text-decoration: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    cursor: pointer;
+    float:right;
+    font-size:18px;
+    margin:10px;
+}
+form.register input[type=text].year
+{
+height: 18px !important;
+width: 30px !important;
+margin-top: 0;
+margin-left:10px;
+}
+form.register input[type=checkbox] {
+    width:14px;
+    margin-top:4px;
+}
+form.register select
+{
+/*border: 1px solid #E1E1E1; */
+width: 170px;
+float: right;
+margin-bottom: 3px;
+color: #000000;
+margin-right: 5px;
+}
+form.register select.date
+{
+    width: 40px;
+}
+input:focus, select:focus{
+    background-color: #efffe0;
+}
+p.info{
+    font-size:7pt;
+    color: gray;
+}
+p.agreement{
+    margin-left:15px;
+}
+p.agreement label{
+    width:390px;
+    text-align:left;
+    margin-top:3px;
+}
+
+
+#captcha-wrap{
+	border:solid #870500 1px;
+	width:270px;
+	-webkit-border-radius: 10px;
+	float:left;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background:#870500;
+	text-align:left;
+	padding:3px;
+	margin-top:3px;
+	height:100px;
+	margin-left:80px;
+}
+#captcha-wrap .captcha-box{
+	-webkit-border-radius: 7px;
+	background:#fff;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	text-align:center;
+	border:solid #fff 1px;
+}
+#captcha-wrap .text-box{
+	-webkit-border-radius: 7px;
+	background:#ffdc73;
+	-moz-border-radius: 7px;
+	width:140px;
+	height:43px;
+	float:left;
+	margin:4px;
+	border-radius: 7px;
+	text-align:center;
+	border:solid #ffdc73 1px;
+}
+
+#captcha-wrap .text-box input{ width:120px;}
+#captcha-wrap .text-box label{
+	 color:#000000;
+	 font-family: helvetica,sans-serif;
+	 font-size:12px;	
+	 width:150px;
+	 padding-top:3px; 
+	 padding-bottom:3px; 
+}
+#captcha-wrap .captcha-action{
+	float:right; width:117px; 
+	background:url(logos.jpg) top right no-repeat; 
+	height:44px; margin-top:3px;
+}
+#captcha-wrap  img#captcha-refresh{
+	margin-top:9px;
+	border:solid #333333 1px;
+	margin-right:6px;
+	cursor:pointer;
+}
+/****************Date Picker Css*************/
+
+.date_error{background: #FF0000;} 
+.calendar { font-family: 'Trebuchet MS', Tahoma, Verdana, Arial, sans-serif; font-size: 0.9em; background-color: #EEE; color: #333; border: 1px solid #DDD; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; padding: 0.2em; width: 32em; } 
+.calendar .months { background-color: #1B0000; border: 1px solid #E78F08; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; color: #FFF; padding: 0.2em; text-align: center; }  
+.calendar .prev-month, .calendar .next-month { padding: 0; }  
+.calendar .prev-month { float: left; } 
+ .calendar .next-month { float: right; } 
+ .calendar .current-month { margin: 0 auto; } 
+ .calendar .months .prev-month, .calendar .months .next-month { color: #FFF; text-decoration: none; padding: 0 0.4em; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; cursor: pointer; } 
+ .calendar .months .prev-month:hover, .calendar .months .next-month:hover { background-color: #FDF5CE; color: #C77405; }  .calendar table { border-collapse: collapse; padding: 0; font-size: 0.8em; width: 100%; } 
+ .calendar th { text-align: center; }  .calendar td { text-align: right; padding: 1px; width: 14.3%; }  
+ .calendar td span { display: block; color: #1C94C4; background-color: #F6F6F6; border: 1px solid #CCC; text-decoration: none; padding: 0.2em; cursor: pointer; } 
+ .calendar td span:hover { color: #C77405; background-color: #FDF5CE; border: 1px solid #FBCB09; } 
+ .calendar td.today span { background-color: #FFF0A5; border: 1px solid #FED22F; color: #363636; }
+
+/***************validator css**************/
+#regform.register fieldset label.error{
+margin-right: -180px;
+margin-top: 35px;
+width: 200px;
+font-size: 13px;
+color: #410010;
+background: rgb(255, 226, 226);
+text-align: center;
+font-weight: normal;
+font-family: cursive;
+}
+#regform.register fieldset.row4 input {
+width: 50px;
+color: #505050;
+float: right;
+margin-right: 5px;
+}
+#regform.register fieldset.row4 label{
+width:auto;
+}
+#regform.register fieldset.row4 label.error{
+margin-right: 0;
+margin-top: 0;
+width: auto;
+}

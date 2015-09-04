@@ -1,0 +1,281 @@
+﻿/* CSS Document */
+
+body 
+{
+font-family:Georgia, "Times New Roman", Times, serif;
+/*height: 100%;*/
+margin: 0px;
+padding: 0px;
+background: #ced7e0 url(images/app-pattern.png) repeat;
+direction:rtl;
+}
+/**************************Header Styling*******************/
+.headerarea{
+	width: 100%;
+background-color: white;
+float: right;
+border-bottom: 1px solid gray;
+}
+.headerarea .logo{
+	float: right;
+padding: 10px 5px;
+}
+.headerarea .menudiv{
+	float: right;
+}
+
+ul.stockmenu{
+	margin: 10px 0;
+padding: 5px 0;
+}
+ul.stockmenu li{
+	float: right;
+list-style-type: none;
+padding: 15px;
+font-size: 18px;
+border: 1px solid white;
+background-color: rgb(174, 209, 255);
+}
+ul.stockmenu li:hover{
+background-color: rgb(255, 253, 134);
+}
+ul.stockmenu li a{
+	color: black;
+text-decoration: none;
+font-weight: bold;
+}
+.headerarea .userinfo{
+	float: right;
+width: 150px
+}
+#logout-ul{
+	margin: 5px;
+padding: 5px;
+}
+#logout-ul li{
+	list-style-type: none;
+font-size: 16px;
+font-weight: bold;
+}
+/**********************************************************/
+/****************main container**********************/
+#frameContainer{
+	margin:0;
+	padding:0;
+	float:left;
+	left:50%;
+	position:relative;
+	margin-top: 10px;
+}
+#PageContainer{
+	
+margin:3px auto;
+padding:3px;	
+float:left;
+left:-50%;
+position:relative;
+text-align:center;
+direction:rtl;
+width:990px;
+}
+.sub-sub-page-container{
+float: right;
+width: 100%;
+margin: 10px;
+/* height: 500px; */
+padding: 10px;
+background: #fff;
+border: 1px solid;
+border-color: #435a8b #3c5488 #334c83;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+
+}
+.active {
+background:hsl(86, 69%, 45%) !important;/* hsl(0, 62%, 45%) ;*/
+}
+/**************************************************/
+/******************************stock page styles*******************/
+.notvalid{
+color:#F00;	
+}
+.infobox{
+font-size:1em;	
+}
+.stockout-row{
+width: 100%;
+float: right;
+display: block;
+text-align: center;
+border: 1px solid rgb(207, 207, 207);
+background: rgb(255, 231, 229);
+border-radius: 10px;
+margin: 5px 0;	
+}
+
+div.stockout-row div.inpboxtitle{
+	font-size:1.1em;	
+}
+.stockmainbtns-container{
+float: right;
+width: 100%;
+margin: 10px;
+background: #fff;
+border: 1px solid;
+height: auto;
+/*min-height: 200px;*/
+border-color: #435a8b #3c5488 #334c83;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+padding:10px;
+}
+.stockmainbtns-container .touchbutton{
+height: auto;
+font-size: 18px;
+background: yellow;
+}
+
+/****stock add item screen elements*********/
+.frmfieldrow{
+width:990px;
+float:right;	
+}
+.frmfieldrow50{
+width:480px;
+float:right;
+text-align: center;
+background: #f6f7f8;
+border: 1px solid #e9eaed;
+padding: 5px;	
+}
+.frmfieldrow100{
+width:972px;
+float:right;
+text-align: center;
+background: #f6f7f8;
+border: 1px solid #e9eaed;
+padding: 5px;	
+}
+.inpboxtitle{
+	float:right;
+	font-size:1.3em;
+	/*padding:5px 5px;*/
+	margin:10px;
+}
+.inpclass{
+float:left;	
+font-size:1.2em;
+padding:0 5px;
+margin: 10px
+}
+.dropdownlistcss-jsx{
+	float:right;
+	font-size:1.1em;
+	padding:5px 5px;
+	margin: 4px;
+	
+}
+.dropdownlistcssCashier{
+	float:right;
+	font-size:1.0em;
+	padding:0px 10px;
+
+}
+.dropdownlistcss{
+	float:right;
+	font-size:1.1em;
+	padding:0px 5px;
+	margin-top: 5px;
+	width:220px;
+
+}
+
+/***********Stock - add new sales item - styling*********/
+.ingr_table{
+width:480px;
+border:1px solid #999;
+float:right;
+text-align:center;
+font-size:1.2em;
+}
+.ingr_tbl_head{
+	width:100%;
+	background:#CCC;
+	height:40px;
+	font-weight:bold;
+}
+.ingr_tbl_row{
+	width:100%;
+	background:#FFF;
+	height:40px;
+	font-weight:normal;
+	margin-top:5px;
+}
+.ingr_row_col{
+	padding:5px;
+	display:block;
+	float:right;
+	border:1px solid #999;
+height: 28px;	
+}
+.ingr_name_col{
+width:40%;
+}
+.ingr_qunt_col{
+	width:20%;
+}
+.ingr_cost_col{
+width:20%;
+}
+.ingr_controls_col{
+width:10%;
+}
+/*******************footer***********************/
+/*******************************footer style****************/
+#footerbar{
+	
+	width:984px;
+	height:50px;
+margin:0 auto;
+	padding:5px;
+}
+.copyrighthome{
+margin:0 auto;
+text-align:center;
+width:950px;
+padding-buttom:5px;
+float:right;	
+}
+.social{
+	display:block;
+	float:left;
+}
+.copyrighthome, .copyrighthome a{
+color:#FFF;
+font-size:14px;
+font-weight:bold;
+text-shadow:none;
+}
+.copyrighthome a:hover{
+	color:#FFF;
+}
+.copyrighthome a:visited{
+color:#FFF;	
+}
+/****************************************/
+.stockinforow{
+	width:99%;
+color:rgb(203, 73, 35);
+}
+.st_infoname{
+	padding:15px;
+	float:right;
+	font-weight:bold;
+	
+}
+.st_infoval{
+	padding:15px;
+	float:right;
+}

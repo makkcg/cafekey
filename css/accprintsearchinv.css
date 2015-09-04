@@ -1,0 +1,99 @@
+﻿/* CSS Document */
+
+body 
+{
+font-family:Georgia, "Times New Roman", Times, serif;
+/*height: 100%;*/
+margin: 0px;
+padding: 0px;
+background:#ffff;/* #ced7e0 url(images/app-pattern.png) repeat;*/
+direction:rtl;
+}
+/**************************print searched invoices - accounting page Styling*******************/
+.searchmaininv{
+	text-align:center;	
+}
+.table-sub-invoice {
+  /* width: 35%; */
+  margin: 5px 10px;
+  float: right;
+  background: #fff;
+  border: 1px solid gray;
+  height: auto;
+  min-height: 300px;
+  min-width:96%; /*408px;*/
+  /* border-color: #435a8b #3c5488 #334c83; */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.inv_data_row {
+  display: block;
+  text-align:center;
+  width: 95%;
+  padding: 4px;
+  margin: 4px;
+  font-family: serif;
+  font-size: 1.1em;
+  border-bottom: 1px solid gray;
+}
+.inlinediv {
+  display: inline-block;
+  direction: ltr;
+  font-weight: normal;
+  margin: 0 10px;
+}
+.inv_table {
+  width:98%;/* 388px;*/
+  border: 1px solid #999;
+  float: right;
+  text-align: center;
+  font-family: fantasy;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.inv_tbl_head {
+  width: 100%;
+  font-weight: bold;
+  font-size: .8em;
+}
+.inv_tbl_head .inv_row_col {
+  background: #E9E7E7;
+  height: 40px;
+  padding: 4px;
+  display: block;
+  float: right;
+  border: 1px solid #999;
+  height: 40px;
+}
+.inv_name_col {
+  width: 43%;
+}
+.inv_unitpr_col {
+  width: 15%;
+}
+.inv_qunt_col {
+  width: 14%;
+}
+.inv_cost_col {
+  width: 15%;
+}
+.inv_controls_col {
+ border: none !important;
+/*  width: 8.7%;*/
+}
+.inv_tbl_datarows .inv_row_col {
+  font-weight: normal;
+  padding: 4px;
+  display: block;
+  float: right;
+  border: 1px solid #999;
+  height: 28px;
+  font-size: 0.9em;
+}
+.inv_controls_col{
+  display: none;	
+}
+.subinvbtns {
+  float: left;
+}

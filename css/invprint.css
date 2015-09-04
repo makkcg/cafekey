@@ -1,0 +1,6 @@
+﻿@media print {
+.inv_controls_col{
+	display:none !important;
+}
+}
+
