@@ -1902,6 +1902,15 @@ $.post("php/acc_func.php",{param:'1~'+parentid},function(server_response) {
 }//// end of populate expences list
 
 function postexpences(exptype,exp_code,exp_dat,exp_time,exp_value,exp_desc,fromcash,profid,issalary){
+	
+	///check if exp is paid from cash , check the cashier balance if the exp is greater than cash , dont accept or save 
+	cashbalance= getcashbalanceNow()
+	if(exp_value>cashbalance){
+	alert("رصيد السيولة الحالية ( "+cashbalance+" جنيه) أقل من المصروف المطلوب، يرجى التأكد من ان صرف المبلغ تم من الخزينة")	
+	return false;
+	}
+	
+	///////
 ////param1: exptype (1 exp is salary or pay to partner) , $param[2] : exp_code, $param[3]: exp_dat,$param[4]:exp_time,$param[5]:exp_value,$param[6]:exp_desc , param7:fromcash ( 1 if paid from chasier, profid if paid by any partner),  param8:profid ( the profid for staff or partner paid to), param9:issalary ( 1 if is paid to staff as salary or related type of exp)
 var expencesdata=exptype+"~"+exp_code+"~"+exp_dat+"~"+exp_time+"~"+exp_value+"~"+exp_desc+"~"+fromcash+"~"+profid+"~"+issalary
 $.ajaxSetup({async:true});
@@ -2341,3 +2350,12 @@ function Popup(data,specific_css)
         //return true;
     }
 /////////////////////////////////////
+//function to get the total current cash balance 
+function getcashbalanceNow(){
+var cashbalance=0;
+	$.ajaxSetup({async:false});
+$.post("php/acc_func.php",{param:'25'},function(server_response) {
+					cashbalance=server_response		
+});///end of ajax
+return cashbalance;
+}

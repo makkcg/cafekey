@@ -1260,6 +1260,27 @@ $result = mysqli_query($con,$sql2);
 		}
 
 	break;
+	case 25:///get all cash balance now
+	$JSON_result=0; //the result is json (earned,spent)
+	///get sum of all earned cash
+	///get sum of all spent cash
+	//
+	$sql2="SELECT SUM( IF(  `acc_mov_type` =1, cash_value, 0 ) ) AS  'earned', SUM( IF(  `acc_mov_type` =2, cash_value, 0 ) ) AS  'spent' FROM  `acc_cash` WHERE 1;";
+$result = mysqli_query($con,$sql2);
+$earned=0;
+$spent=0;
+ while ($row1 = $result->fetch_row())
+  	{
+		$earned=$row1[0];
+		$spent=$row1[1];
+		//$sql_results=$user_ID;
+	}
+	$cashbalance=($earned-$spent);
+	$sql_results=$cashbalance;
+	///calculate the balance all earned - all spent
+	
+	
+	break;
 };///end of order switch
 
 
