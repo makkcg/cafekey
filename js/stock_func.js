@@ -631,6 +631,8 @@ $("#st_itm_type").change(function() {
 
 ///// stock - buy item screen - click on save button
 $("#save-new-st-itm").click(function() {
+	
+
 ////// the user selected to buy new or existing item - 0- new item , 1- existing item
 var sel_itm_knewold = $("#stock_new_old").jqxDropDownList('getSelectedItem');
 /////// existing items only variables
@@ -651,6 +653,15 @@ var stock_names_selected=$("#stock_names"); // the selected stock
 var stock_buyer=$("#stock_buyer");  /// the selected buyer of the item
 var st_itm_type=$("#st_itm_type");  // the selected item type
 
+///check if the purchase value is greater than the total cash balance if user selected pay from safe
+var cashbalance=0
+cashbalance= getcashbalanceNow()///get all the cash balance
+if(stock_buyer.val()==0){
+	if(parseFloat(itm_price.val())>cashbalance){
+		alert("رصيد السيولة الحالية ( "+cashbalance+" جنيه) أقل من المصروف المطلوب، يرجى التأكد من ان صرف المبلغ تم من الخزينة")	
+	return;
+	}
+}
 //// check if the item is new or exist to do action based on this and to select wich feilds to save
 
 if(sel_itm_knewold.value=="0"){// selected to buy new itme
@@ -1790,3 +1801,12 @@ return returnedset;
 function generatestockreport(repdatatype,reptype,itms,stocks,startdate,enddate){
 
 }//end of generate freport function
+//function to get the total current cash balance 
+function getcashbalanceNow(){
+var cashbalance=0;
+	$.ajaxSetup({async:false});
+$.post("php/acc_func.php",{param:'25'},function(server_response) {
+					cashbalance=server_response		
+});///end of ajax
+return cashbalance;
+}
