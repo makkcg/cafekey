@@ -319,8 +319,19 @@ $sql="CALL `get_stok_item_balance` ('".$param[1]."','".$param[2]."','".$param[3]
 		$sql_results[]=array("ing_AI" => $ingrowid, "ing_name" => $ingname, "ing_qnty" => $ingquant, "ing_qnty_unit" => $ingunit);
 	}
     break;
+	case 18:
+	//$JSON_result=0; //the result is text
+	//// param1 : itm ingradient qnt, param2: mainItmId , param3: DBrowID(AutoIncrement)
+	$sql="UPDATE `items_ingradients` SET `itm_ingrad_qnty` = '".$param[1]."' WHERE `items_ingradients`.`item_ingradients_id` = '".$param[3]."' AND `items_ingradients`.`itm_id` = '".$param[2]."';";
+	   $result = mysqli_query($con,$sql);
+	  // $sql_results = array();
+	  //if($result){
+	  $sql_results=$result ;
+	  //}
+	 	
+	break;
 }	
-if($ordr==3 or $ordr==9 or $ordr==10 or $ordr==11 or $ordr==14 or $ordr==15){
+if($ordr==3 or $ordr==9 or $ordr==10 or $ordr==11 or $ordr==14 or $ordr==15 or $ordr==18){
 	echo $sql_results;
 }else{
 	echo json_encode($sql_results);

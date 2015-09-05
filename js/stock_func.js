@@ -206,6 +206,7 @@ var menuitem=$(this).data("id")
 	initialize_stock_sub_pages();
 	$(".st_cashieritms_subpage").show();
 	$('.ing_rows').find(".ing_row").remove();
+	$('.addingbtn').hide();
 	break;
 		
 	}
@@ -1090,12 +1091,17 @@ var unit_measure_row=$("#unit_measure_row");// measurment of selected row item -
 
 //initializesalesitems();
 ///////edit/del/view sales Cashier items ingradients
+$("#stock_sales_itm_op").change(function() {
+	$("#stock_salesItem").change();
+})
 ///sales item change (three cases: if operation is view or edit or delete)
 $("#stock_salesItem").change(function() {
 	var operation_id = $('#stock_sales_itm_op').find(":selected").val();
 	var selecteditem_id = $('#stock_salesItem').find(":selected").val();
-	if(operation_id==0){
+	if(operation_id==0){///show item ingradients (View only)
 		$('.ing_rows').find(".ing_row").remove();
+		$('.addingbtn').hide()
+		
 		///get sales itm ingradient from db
 		$.post("php/db_query_fun.php",{param:'17~'+selecteditem_id},function(server_response) {
 						data = $.parseJSON(server_response);
@@ -1105,11 +1111,46 @@ $("#stock_salesItem").change(function() {
 						}//end for
 });///end post
 		
-	}else{
-		
+	}else if(operation_id==1){//edit item ingradients (change quantities, remove ingradient, add ingradient)
+		$('.ing_rows').find(".ing_row").remove();//clean ingradient div 
+		$('.addingbtn').show()
+		///get sales itm ingradient from db
+		$.post("php/db_query_fun.php",{param:'17~'+selecteditem_id},function(server_response) {
+						data = $.parseJSON(server_response);
+						
+						for(var i = 0; i < data.length; i++){
+                  		$('.ing_rows').append('<div class="ing_row" data-dbrowid="'+data[i].ing_AI+'" style="width:100%;float:right;background:#f6f7f8;border: 1px solid #e9eaed;"><div class="inpboxtitle  st_ing_arrindex">'+(i+1)+'</div><div class="inpboxtitle  st_ing_name">'+data[i].ing_name+'</div><div class="inpboxtitle  st_ing_qnty" data-value="0"><input type="text" style="width:auto;max-width:100px;font-size:.8em;margin-top:0;text-align:center" class="inpboxtitle iniResettxt st_ing_qnty_inp" onkeypress="validate_isNum(event)" value='+data[i].ing_qnty+'></div><div class="inpboxtitle  st_ing_unit" >'+data[i].ing_qnty_unit+'</div><div class="inpboxtitle  removeingbtn" style="float:left;"><img data-dbrowid="'+data[i].ing_AI+'" data-mainitemid="'+selecteditem_id+'" style="margin-top:0" align="middle" class="ingr_removes" src="images/del24.png"></div><div class="inpboxtitle  ingr_update" style="float:left;" data-dbrowid="'+data[i].ing_AI+'" data-mainitemid="'+selecteditem_id+'"><img style="margin-top:0" align="middle" class="ingr_update" data-dbrowid="'+data[i].ing_AI+'" data-mainitemid="'+selecteditem_id+'" src="images/save24.png"></div></div>');
+						}//end for
+});///end post
 	}
 })
 
+////update quantity in db of ingradient itm for specific stock itm
+$(document).on('click','img.ingr_update',function(){
+
+mainitemid = $(this).data('mainitemid');///main item id
+ingDBrowid = $(this).data('dbrowid');/// database row number of the ingradient itm in ingTable
+ingqnty=$(this).parent().parent().find('.st_ing_qnty_inp')//ingradient quantity from input of the selected ingradient
+
+console.log("mainitemid "+mainitemid+" AIfor ing "+ingDBrowid+" inputqnty "+ ingqnty.val())
+///validate input
+if(ingqnty.val()=="" || ingqnty.val()<1){
+alert("يرجى ادخال كمية صحيحة");
+ingqnty.focus()	
+}else{//if input data is correct
+	///update itm quantity in db
+	//// param1 : itm ingradient qnt, param2: mainItmId , param3: DBrowID(AutoIncrement)
+	postdata=ingqnty.val()+"~"+mainitemid+"~"+ingDBrowid
+	$.post("php/db_query_fun.php",{param:'18~'+postdata},function(server_response) {
+	if(server_response==1){
+	alert("تم تعديل الكمية بنجاح");
+	}else{
+	alert("عفوا حدث خطا اثناء حفظ البيانات");
+	}
+	$("#stock_salesItem").change();	
+	});
+}
+});
 //////// delet a row from ingradients items in the table - add sales item sub page
 $(document).on('click','div.ingr_remove',function(){
             var $rows =  $("#ingr_tbl_datarows"),

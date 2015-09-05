@@ -565,11 +565,12 @@ direction:rtl;
 	<div class="inpboxtitle">اختر العملية</div>
     <select id="stock_sales_itm_op" class="dropdownlistcss">
      <option value="0">عرض</option>
-     
+     <option value="1">تعديل</option>
     </select>
 </div>
 <div class="frmfieldrow50">
 <div class="inpboxtitle">اختر الصنف : </div>
+
     <div class="dropdownlistcss"><select id="stock_salesItem" class="dropdownlistcss initialize"></select></div>
 </div>
 </div>
@@ -583,6 +584,8 @@ direction:rtl;
 
 <div class="frmfieldrow50">
 	<div class="inpboxtitle " style="font-weight:bold;">مكونات الصنف : </div>
+    <div class="inpboxtitle addingbtn" style="float:left;margin-top:0;"><img align="middle" src="images/add30.png"><div class="inpboxtitle"> اضافة مكونات</div>
+</div>
     <div class="ing_rows">
    <div class="ing_row" style="width:100%;float:right;"><div class="inpboxtitle  st_ing_arrindex">1</div><div class="inpboxtitle  st_ing_name">بن محوج</div><div class="inpboxtitle  st_ing_qnty" data-value="0">10</div><div class="inpboxtitle  st_ing_unit" >جرام</div></div>
    <div class="ing_row" style="width:100%;float:right;"><div class="inpboxtitle  st_ing_arrindex">2</div><div class="inpboxtitle  st_ing_name">بن محوج</div><div class="inpboxtitle  st_ing_qnty" data-value="0">10</div><div class="inpboxtitle  st_ing_unit" >جرام</div></div>
@@ -837,4 +840,4 @@ echo "<META HTTP-EQUIV=\"refresh\" CONTENT=\"0; URL=index.php#login_form\"> ";
 exit;
 die();	
 }
-?>>>
+?>>>>>
