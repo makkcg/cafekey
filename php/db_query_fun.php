@@ -75,7 +75,7 @@ switch ($ordr) {// swich the order cases and create query based on the order
 		$sql_results=$row[10];
 	}
 */
-$sql="CALL `getnextID` ('".$param[1]."','mokacafeop')";//// mokacafe is the database name will be changed when online
+$sql="CALL `getnextID` ('".$param[1]."','".$mysql_db_database."')";//// mokacafe is the database name will be changed when online
 	   $result = mysqli_query($con,$sql);
 	    while ($row = $result->fetch_row())
   	{
